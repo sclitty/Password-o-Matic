@@ -1,14 +1,14 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+//   passwordText.value = password;
 
-}
+// }
 
 // TODO: Create generatePassword function - returns final password - all code should live inside this function
 
@@ -30,13 +30,10 @@ function writePassword() {
 // I can use Math.floor(Math.random()) to get a random number
 // for loop that runs for specified prompt value for length [for(var i=0; i<"user specified length"; i++){"logic goes here"}]
 
+// TODO: Inside FOR loop push each char into the final char var
+
 // TODO: Add validations to make sure at least one type of char is selected and alert the user if there are no types being selected
 // TODO: Add validations to the length to make sure it is between 8 and 128 chars 
-
-
-
-// TODO:
-
 
 
 // Add event listener to generate button
