@@ -1,40 +1,122 @@
 // Assignment Code
-// var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  passwordText.value = password;
 
-// }
-
-// TODO: Create generatePassword function - returns final password - all code should live inside this function
-
-// TODO: Create a prompt to ask the length of the password and save it to a VAR (8-128 chars)
-
-// TODO: Create a Confirm to ask the user if they want lowercase char
-// TODO: Create a Confirm to ask the user if they want uppercase char
-// TODO: Create a Confirm to ask the user if they want numbers
-// TODO: Create a Confirm to ask the user if they want special char
-
-// TODO: After prompts are completed - We need to create the password!
-
-// TODO: Create arrays with all needed chars
-// TODO: Create a new VAR that holds all the chosen char sets
-// TODO: Create a Conditional - saves selected char sets from confirms to our chosen char VAR  (if - statement)
-
-// TODO: We have to select the specific number of char randomly from our final collection based on the user specified length
-
-// I can use Math.floor(Math.random()) to get a random number
-// for loop that runs for specified prompt value for length [for(var i=0; i<"user specified length"; i++){"logic goes here"}]
-
-// TODO: Inside FOR loop push each char into the final char var
-
-// TODO: Add validations to make sure at least one type of char is selected and alert the user if there are no types being selected
-// TODO: Add validations to the length to make sure it is between 8 and 128 chars 
-
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+// Setting Arrays ---- Maybe those functions?...// 
+
+var lower = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y","z"];
+var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","U","R","S","T","U","V","W","X","Y","Z"];
+var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var symbol = ["^", "%", "$", "#", "@",">", "<", "?"];
+var userChoice = [];
+var finalPassword = "";
+
+// Testing to see if variables work with functions //  
+console.log(lower, upper, number, symbol);
+
+// Create generatePassword function - returns final password - all code should live inside this function
+
+function generatePassword() 
+{
+    // Create a prompt to ask the length of the password and save it to a VAR (8-128 chars)
+    var passwordLength = prompt
+        ("How many characters do you want your password to be? Please enter a number between 8 and 128"); 
+        if (passwordLength < 8 || passwordLength > 128) 
+        {
+            prompt ("Please enter a number between 8 and 128");
+        } 
+
+        // console.log(passwordLength)
+
+    // Create a Confirm to ask the user if they want lowercase char
+    var ranLower = confirm 
+        ("Would you like to include lowercase letters?");
+        if (ranLower) 
+        {
+            for (var i = 0; i < lower.length; i++)
+            {
+                userChoice.push(lower[i]);
+                // console.log(lower);
+            }
+        }
+    
+    // Create a Confirm to ask the user if they want uppercase char  
+    var ranUpper = confirm 
+    ("Would you like to include uppercase letters?");
+    if (ranUpper) 
+    {
+        for (var i = 0; i < upper.length; i++)
+        {
+            userChoice.push(upper[i]);
+            // console.log(upper);
+        }
+    }
+
+    // Create a Confirm to ask the user if they want numbers
+   var ranNumber = confirm 
+        ("Would you like to include numbers?");
+        if (ranNumber) 
+        {
+            for (var i = 0; i < number.length; i++)
+            {
+                userChoice.push(number[i]);
+                // console.log(number);
+            }
+        }
+    // Create a Confirm to ask the user if they want special char
+    var ranSymbol = confirm 
+    ("Would you like to include symbols?");
+    if (ranSymbol) 
+    {
+        for (var i = 0; i < symbol.length; i++)
+        {
+            userChoice.push(symbol[i]);
+            // console.log(symbol);
+        }
+    }
+
+    if (ranLower=== false && ranUpper=== false && ranNumber=== false && ranSymbol=== false)
+    {
+        alert("Please select at least one character set to from a password!");
+    }
+
+    // After prompts are completed - We need to create the password!
+    for (var i = 0; i < passwordLength; i++)
+    {
+        finalPassword += userChoice[Math.floor(Math.random() * userChoice.length)];
+    }
+
+    return finalPassword;
+}
+
+
+
+// I really like using these functions for finding a random char.... lets see if I Can get them to work!
+// maybe next time... 
+// function getRandomLower (){
+//     return String.fromCharCode(Math.floor(Math.random()*26) + 97);
+// }
+  
+//   function getRandomUpper (){
+//     return String.fromCharCode(Math.floor(Math.random()*26) + 65);
+// }
+  
+//   function getRandomNumber (){
+//     return String.fromCharCode(Math.floor(Math.random()*10) + 48);
+// }
+  
+//   function getRandomSymbol (){
+//     const symbols= '!@$%^&*+}{:(;)<>';
+//     return symbols[Math.floor(Math.random() * symbols.length)]
+// }
+

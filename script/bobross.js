@@ -1,7 +1,7 @@
 // I did a code along with a video from "Traversy Media" //
 // https://www.youtube.com/watch?v=duNmhKgtcsI //
 // Learned a lot from that tutorial and understood better as I coded the JavaScript //
-// This is not my code (I did type it, though) but I'll leave it in here so you can swap .js links in the html and see the difference! (update HTML and CSS too) //
+// This is not my code (I did type it, though) but I'll leave it in here so you can swap .js links in the html and see the difference! (update HTML and CSS too, notes provided!) //
 
 
 //  DOM ELEMENTS 
