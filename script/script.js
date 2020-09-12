@@ -13,16 +13,16 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 // Setting Arrays ---- Maybe those functions?...// 
-
+var userChoice = [];
 var lower = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y","z"];
 var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","U","R","S","T","U","V","W","X","Y","Z"];
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbol = ["^", "%", "$", "#", "@",">", "<", "?"];
-var userChoice = [];
-var finalPassword = "";
 
-// Testing to see if variables work with functions //  
-console.log(lower, upper, number, symbol);
+finalPassword = "";
+
+
+// console.log(lower, upper, number, symbol);
 
 // Create generatePassword function - returns final password - all code should live inside this function
 
@@ -87,36 +87,14 @@ function generatePassword()
 
     if (ranLower=== false && ranUpper=== false && ranNumber=== false && ranSymbol=== false)
     {
-        alert("Please select at least one character set to from a password!");
+        alert("Please select at least one character set to form a password!");
     }
 
     // After prompts are completed - We need to create the password!
     for (var i = 0; i < passwordLength; i++)
-    {
+    {   
         finalPassword += userChoice[Math.floor(Math.random() * userChoice.length)];
     }
 
     return finalPassword;
 }
-
-
-
-// I really like using these functions for finding a random char.... lets see if I Can get them to work!
-// maybe next time... 
-// function getRandomLower (){
-//     return String.fromCharCode(Math.floor(Math.random()*26) + 97);
-// }
-  
-//   function getRandomUpper (){
-//     return String.fromCharCode(Math.floor(Math.random()*26) + 65);
-// }
-  
-//   function getRandomNumber (){
-//     return String.fromCharCode(Math.floor(Math.random()*10) + 48);
-// }
-  
-//   function getRandomSymbol (){
-//     const symbols= '!@$%^&*+}{:(;)<>';
-//     return symbols[Math.floor(Math.random() * symbols.length)]
-// }
-
