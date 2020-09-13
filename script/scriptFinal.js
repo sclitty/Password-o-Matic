@@ -70,7 +70,7 @@ function generatePassword() {
     finalPassword = finalPassword.slice(0, passwordLength)
 
     console.log(finalPassword);
-    console.log(shuffle(finalPassword))
+    // console.log(shuffle(finalPassword))
 
     return finalPassword;
 
@@ -78,23 +78,23 @@ function generatePassword() {
 
 // We should shuffle the finalPassword for extra security //
 
-function shuffle(array) {
-  let counter = array.length;
+// function shuffle(array) {
+//   let counter = array.length;
 
-  // While there are elements in the array
-  while (counter > 0) {
-      // Pick a random index
-      let index = Math.floor(Math.random() * counter);
+//   // While there are elements in the array
+//   while (counter > 0) {
+//       // Pick a random index
+//       let index = Math.floor(Math.random() * counter);
 
-      // Decrease counter by 1
-      counter--;
+//       // Decrease counter by 1
+//       counter--;
 
-      // And swap the last element with it
-      let temp = array[counter];
-      array[counter] = array[index];
-      array[index] = temp;
-  }
+//       // And swap the last element with it
+//       let temp = array[counter];
+//       array[counter] = array[index];
+//       array[index] = temp;
+//   }
 
-  return array;
-}
+//   return array;
+// }
 
