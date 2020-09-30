@@ -3,6 +3,8 @@ Working with JavaScript to create a password generator.
 
 Very new to JavaScript and this is my first time really utilizing it! 
 
+Page Link: https://sclitty.github.io/Password-o-Matic/
+
 ![Screen Shot](Assets/PageLayout.PNG)
 
 
